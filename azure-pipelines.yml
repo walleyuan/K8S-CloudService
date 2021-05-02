@@ -20,7 +20,7 @@ stages:
           script: |
             # run terrafom 
             terraform init
-          workingDirectory: './infra'
+          workingDirectory: './Infra'
     
       - task: TerraformTaskV1@0
         condition: and(succeeded(), eq(variables.isMain, true))
@@ -28,5 +28,5 @@ stages:
         inputs:
           provider: 'azurerm'
           command: 'apply'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/infra'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/Infra'
           environmentServiceNameAzureRM: 'PayAsYouGo(f538d4ef-40d6-43bf-859c-e1d3e86f3667)'
