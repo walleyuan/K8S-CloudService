@@ -4,10 +4,10 @@ variables:
   K8sPrevisionRequired: false
 
 stages: 
-- stage: Provisioning
+- stage: Provision
   
   jobs:
-  - job: Install
+  - job: Installing
     steps:
       - task: PowerShell@2
         inputs:
