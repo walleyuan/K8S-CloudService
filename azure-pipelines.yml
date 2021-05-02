@@ -7,8 +7,12 @@ stages:
 - stage: Provisioning
   
   jobs:
-  - job: Deploy
+  - job: Install
     steps:
+      - task: PowerShell@2
+        inputs:
+          targetType: 'inline'
+          script: 'Dir'
       - task: PowerShell@2
         displayName: Terrafom Init
         inputs:
