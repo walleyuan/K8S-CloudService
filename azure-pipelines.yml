@@ -1,8 +1,4 @@
 
-variables:
-  imageName: 'k8s-demo'
-  K8sPrevisionRequired: false
-
 stages: 
 - stage: Provision
   
@@ -23,7 +19,7 @@ stages:
           workingDirectory: './Infra'
     
       - task: TerraformTaskV1@0
-        condition: and(succeeded(), eq(variables.isMain, true))
+        condition: succeeded()
         displayName: Terraform Validate and Apply
         inputs:
           provider: 'azurerm'
